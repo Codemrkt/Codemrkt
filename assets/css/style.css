@@ -18,7 +18,7 @@
 
 -----------------------------------------------------------------------------------*/
 /*===========================
-    1. COMMON css 
+    1. COMMON css
 ===========================*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800");
 body {
@@ -402,7 +402,7 @@ p {
     transform: rotate(-130deg); } }
 
 /*===========================
-    11.BUTTON css 
+    11.BUTTON css
 ===========================*/
 .buttons-title .title {
   font-size: 36px;
@@ -427,7 +427,7 @@ p {
   padding: 0 32px;
   font-size: 16px;
   line-height: 48px;
-  color: #0067f4;
+  color: black;
   cursor: pointer;
   z-index: 5;
   -webkit-transition: all 0.4s ease-out 0s;
@@ -2061,7 +2061,7 @@ p {
     background-position: right center; }
 
 /*===========================
-    6.FORM ELEMENTS css 
+    6.FORM ELEMENTS css
 ===========================*/
 .form-elements-title {
   font-size: 36px;
@@ -2267,7 +2267,7 @@ p {
     border-radius: 5px; }
 
 /*===========================
-    2.HEADER css 
+    2.HEADER css
 ===========================*/
 /*===== HEADER FOUR =====*/
 .header-area .navbar-transparent {
@@ -2703,7 +2703,7 @@ p {
         height: 200px; } }
 
 /*===========================
-      17.ABOUT css 
+      17.ABOUT css
 ===========================*/
 .about-area {
   position: relative;
@@ -2816,7 +2816,7 @@ p {
         line-height: 24px; } }
 
 /*===========================
-    2.HEADER css 
+    2.HEADER css
 ===========================*/
 .single-features {
   position: relative;
@@ -2877,7 +2877,7 @@ p {
     color: #fff; }
 
 /*===========================
-      16.PRICING css 
+      16.PRICING css
 ===========================*/
 .pricing {
   -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
@@ -2975,8 +2975,80 @@ p {
     left: 0;
     width: 101%; }
 
+
+.pricing2 {
+      -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      padding: 24px 20px 50px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      background: -webkit-linear-gradient(#0067f4, #2bdbdc);
+      background: #fc7f03;
+      background: #fc7f03; }
+  .pricing2 .pricing-header .sub-title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 25px;
+        color: #fff;
+        position: relative;
+        padding-bottom: 8px; }
+        .pricing2 .pricing-header .sub-title::before {
+          position: absolute;
+          content: '';
+          width: 72px;
+          height: 4px;
+          bottom: 0;
+          right: 0;
+          background-color: #2bdbdc;
+          margin: 0 auto; }
+          .pricing2 .pricing-header .price {
+            display: block;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 80px;
+            margin-top: 32px;
+            color: #fff; }
+            .pricing2 .pricing-list {
+              margin-top: 40px; }
+              .pricing2 .pricing-list ul li {
+                font-size: 16px;
+                line-height: 24px;
+                color: #fff;
+                margin-top: 16px; }
+                @media only screen and (min-width: 992px) and (max-width: 1199px) {
+                  .pricing2 .pricing-list ul li {
+                    font-size: 14px;
+                    margin-top: 12px; } }
+                @media (max-width: 767px) {
+                  .pricing2 .pricing-list ul li {
+                    font-size: 14px;
+                    margin-top: 12px; } }
+                @media only screen and (min-width: 576px) and (max-width: 767px) {
+                  .pricing2 .pricing-list ul li {
+                    font-size: 16px;
+                    margin-top: 16px; } }
+                .pricing2 .pricing-list ul li i {
+                  color: #fff;
+                  margin-right: 8px; }
+            .pricing2 .pricing-btn {
+              margin-top: 42px; }
+              .pricing2 .pricing-btn .main-btn {
+                background-color: #fff;
+                border-color: #fff; }
+                .pricing2 .pricing-btn .main-btn:hover {
+                  color: #0067f4;
+                  -webkit-box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.16);
+                  -moz-box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.16);
+                  box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.16); }
+            .pricing2 .bottom-shape {
+              position: absolute;
+              bottom: -20px;
+              left: 0;
+              width: 101%; }
 /*===========================
-        13.TEAM css 
+        13.TEAM css
 ===========================*/
 .single-team {
   position: relative; }
@@ -3038,7 +3110,7 @@ p {
           color: #0067f4; }
 
 /*===========================
-       25.CLIENT css 
+       25.CLIENT css
 ===========================*/
 .single-client img {
   -webkit-filter: grayscale(100%);
@@ -3054,7 +3126,7 @@ p {
   filter: grayscale(0); }
 
 /*===========================
-      20.CONTACT css 
+      20.CONTACT css
 ===========================*/
 .contact-area {
   padding-top: 70px;
@@ -3170,7 +3242,7 @@ p {
       margin-top: 16px; }
 
 /*===========================
-    22.HEADER css 
+    22.HEADER css
 ===========================*/
 .footer-area {
   background-color: #f4f6f7;
