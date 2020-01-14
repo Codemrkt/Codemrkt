@@ -132,7 +132,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="about-content">
-                        <h5 class="sub-title">OPTIMIZED FOR</h5>
+                        <h5 class="sub-title">HEHHLLOOOO</h5>
                         <h3 class="about-title">Software, SaaS and App Landing Pages</h3>
                         <p class="text">By far the best fundraising experience on a mobile device, whether you’re launching, customizing, managing, or donating to a campaign.</p>
                     </div> <!-- about content -->
@@ -483,16 +483,7 @@
                                         <label>Full Name</label>
                                         <div class="input-items default">
                                             <i class="lni-user"></i>
-                                            <input type="text" name="name" placeholder="Full Name">
-                                        </div>
-                                    </div> <!-- form input -->
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-input mt-15">
-                                        <label>Email Address</label>
-                                        <div class="input-items default">
-                                            <i class="lni-envelope"></i>
-                                            <input type="text" name="email" placeholder="admin@company.com">
+                                            <input id='fullname' type="text" name="name" placeholder="Full Name">
                                         </div>
                                     </div> <!-- form input -->
                                 </div>
@@ -501,7 +492,7 @@
                                         <label>Phone Number</label>
                                         <div class="input-items default">
                                             <i class="lni-phone-handset"></i>
-                                            <input type="text" name="number" placeholder="01234567890">
+                                            <input id='phonenum' type="text" name="number" placeholder="01234567890">
                                         </div>
                                     </div> <!-- form input -->
                                 </div>
@@ -510,7 +501,7 @@
                                         <label>Subject</label>
                                         <div class="input-items default">
                                             <i class="lni-bubble"></i>
-                                            <input type="text" name="subject" placeholder="Type here">
+                                            <input id='subj' type="text" name="subject" placeholder="Type here">
                                         </div>
                                     </div> <!-- form input -->
                                 </div>
@@ -519,7 +510,7 @@
                                         <label>Your Message</label>
                                         <div class="input-items default">
                                             <i class="lni-pencil-alt"></i>
-                                            <textarea name="message" placeholder="Type your message here"></textarea>
+                                            <textarea id="myText" name="message" placeholder="Type your message here"></textarea>
                                         </div>
                                     </div> <!-- form input -->
                                 </div>
@@ -527,7 +518,7 @@
                                 <div class="col-md-12">
                                     <div class="single-form pt-25">
                                         <div class="input-form rounded-buttons">
-                                            <button class="main-btn rounded-three" type="submit">SEND MESSAGE</button>
+                                            <button onclick="sendMail(); return false" class="main-btn rounded-three" type="submit">SEND MESSAGE</button>
                                         </div>
                                     </div> <!-- single form -->
                                 </div>
@@ -620,12 +611,30 @@
 
     <!--====== BACK TOP TOP PART ENDS ======-->
 
+    <script>
+
+
+    function sendMail() {
+
+    var body = escape(document.getElementById('myText').value)
+            +" "+escape(document.getElementById('fullname').value) + "\n"
+            +" "+escape(document.getElementById('phonenum').value)
+
+    var link = "mailto:Codemrkt@gmail.com"
+             + "?&subject="+ escape(document.getElementById('subj').value)
+             + "&body=" + body
+    ;
+
+    window.location.href = link;
+}
+
+    </script>
 
 
 
 
-
-
+    <script src="https://smtpjs.com/v2/smtp.js">
+</script>
     <!--====== jquery js ======-->
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
