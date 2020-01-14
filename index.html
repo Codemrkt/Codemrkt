@@ -510,7 +510,7 @@
                         <h3 class="title">Get in touch</h3>
                     </div>
                     <div class="contact-form form-style-four mt-15">
-                        <form id="contact-form" action="assets/contact.php" method="post">
+                        <form id="contact-form"  method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-input mt-15">
@@ -552,7 +552,7 @@
                                 <div class="col-md-12">
                                     <div class="single-form pt-25">
                                         <div class="input-form rounded-buttons">
-                                            <button onclick="sendMail(); return false" class="main-btn rounded-three" type="submit">SEND MESSAGE</button>
+                                            <button onclick="sendMail(); return false" class="main-btn rounded-three" type="submit">lof MESSAGE</button>
                                         </div>
                                     </div> <!-- single form -->
                                 </div>
@@ -626,7 +626,7 @@
                         <h3 class="title">Sign-up For Free</h3>
                     </div>
                     <div class="contact-form form-style-three mt-15">
-                        <form id="contact-form" action="assets/contact.php" method="post">
+                        <form id="contact-form"  method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-input mt-15">
@@ -656,7 +656,7 @@
                                     <div class="form-input mt-15">
                                         <label>Set a Password</label>
                                         <div class="input-items default">
-                                            <input id='setpassword' type="text" name="subject" placeholder="password123">
+                                            <input id='setpassword' type="password" name="subject" placeholder="password123">
                                         </div>
                                     </div> <!-- form input -->
                                 </div>
@@ -687,7 +687,7 @@
                         <h3 class="title">Log-in</h3>
                     </div>
                     <div class="contact-form form-style-three mt-15">
-                        <form id="contact-form" action="assets/contact.php" method="post">
+                        <form id="contact-form" method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-input mt-15">
@@ -701,7 +701,7 @@
                                     <div class="form-input mt-15">
                                         <label>Password</label>
                                         <div class="input-items default">
-                                            <input id='password-r' type="text" name="subject" placeholder="password123">
+                                            <input id='password-r' type="password" name="subject" placeholder="password123">
                                         </div>
                                     </div> <!-- form input -->
                                 </div>
@@ -709,7 +709,7 @@
                                 <div class="col-md-10">
                                     <div class="single-form pt-25">
                                         <div class="input-form rounded-buttons">
-                                            <button onclick="" class="main-btn rounded-six" type="submit">LOG IN</button>
+                                            <button onclick="checkUser(); return false" class="main-btn rounded-six" type="submit">LOG IN</button>
                                         </div>
                                     </div> <!-- single form -->
                                 </div>
@@ -733,7 +733,7 @@
                         <a class="mt-30" href="index.html"><img src="assets/images/logo.svg" alt="Logo"></a>
                     </div> <!-- footer logo -->
                     <div class="footer-support text-center">
-                        <span class="mail">support@codemrkt.com</span>
+                        <span class="mail">codemrkt@gmail.com</span>
                     </div>
 
                     <div class="copyright text-center mt-35">
@@ -743,6 +743,7 @@
             </div> <!-- row -->
         </div> <!-- container -->
     </footer>
+
 
     <!--====== FOOTER FIVE PART ENDS ======-->
 
@@ -777,17 +778,51 @@
 
     function sendUser() {
 
-    var body = escape(document.getElementById('name').value)
-            +" "+escape(document.getElementById('lastname').value) + "\n"
-            +" "+escape(document.getElementById('email').value) + "\n"
-            +" "+escape(document.getElementById('setpassword').value)
+      var testUser = { name: escape(document.getElementById('name').value),
+                       lastname:escape(document.getElementById('lastname').value),
+                      email: escape(document.getElementById('email').value),
+                      password:escape(document.getElementById('setpassword').value)};
 
-    var link = "mailto:codemrkt@gmail.com"
-             + "&body=" + body
-    ;
+      var mail = escape(document.getElementById('email').value)
+      console.log(mail)
+      window.localStorage.setItem(mail, JSON.stringify(testUser));
 
-    window.location.href = link;
+      document.getElementById("name").value = "";
+      document.getElementById("lastname").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("setpassword").value = "";
+      // Put the object into storage
+      alert("New user is successfully created");
+      for (var a in localStorage) {
+          console.log(a, ' = ', localStorage[a]);
 }
+    }
+
+    </script>
+
+    <script>
+
+
+    function checkUser() {
+
+    var email= escape(document.getElementById('email-r').value)
+    var pass = escape(document.getElementById('password-r').value)
+
+      // Put the object into storage
+    var user = JSON.parse(localStorage.getItem(email));
+    if(user.password!=pass){
+      alert("Password is not correct")
+      document.getElementById("email-r").value = "";
+      document.getElementById("password-r").value = "";
+    }
+    else{
+      alert('Login Successfully')
+      document.getElementById("email-r").value = "";
+      document.getElementById("password-r").value = "";
+      location.reload();
+    }
+
+    }
 
     </script>
 
